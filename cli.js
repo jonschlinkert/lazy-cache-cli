@@ -8,7 +8,7 @@ var lazy = require('./');
 var utils = require('./utils');
 var pkg = utils.pkg();
 var argv = require('minimist')(process.argv.slice(2), {
-  alias: {f: 'filepath'}
+  alias: {f: 'file'}
 });
 
 /**
