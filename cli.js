@@ -8,7 +8,7 @@ var lazy = require('./');
 var utils = require('./utils');
 var pkg = utils.pkg();
 var argv = require('minimist')(process.argv.slice(2), {
-  alias: {f: 'filepath'}
+  alias: {f: 'file'}
 });
 
 /**
@@ -22,7 +22,7 @@ var filepath = argv.f || 'utils.js';
  */
 
 if (!fs.existsSync(utils.cwd(filepath))) {
-  lazy.addUtils(function(err, updated) {
+  lazy.addUtils(filepath, function(err, updated) {
     if (err) return console.error(err);
     success('added "' + filepath + '"');
     if (updated) {
@@ -35,7 +35,7 @@ if (!fs.existsSync(utils.cwd(filepath))) {
   success('filepath "' + filepath + '" already exists');
 
   if (pkg.files.indexOf(filepath) === -1) {
-    lazy.updatePkg(function(err) {
+    lazy.updatePkg(filepath, function(err) {
       if (err) return console.error(err);
       success('updated package.json `files` with: "' + filepath + '"');
     });
