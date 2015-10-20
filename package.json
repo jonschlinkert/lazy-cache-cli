@@ -1,0 +1,43 @@
+{
+  "name": "lazy-cli",
+  "description": "Super basic CLI for adding a `utils.js` file for lazy-cache.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/lazy-cli",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/lazy-cli",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/lazy-cli/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "utils.js"
+  ],
+  "preferGlobal": true,
+  "bin": {
+    "lazy": "cli.js"
+  },
+  "main": "cli.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "ansi-green": "^0.1.1",
+    "cwd": "^0.8.4",
+    "detect-conflicts": "^0.1.1",
+    "inject-snippet": "^0.3.0",
+    "lazy-cache": "^0.2.3",
+    "load-pkg": "^2.0.1",
+    "success-symbol": "^0.1.0",
+    "write": "^0.2.1",
+    "write-json": "^0.2.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "keywords": []
+}
