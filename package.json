@@ -1,7 +1,7 @@
 {
   "name": "lazy-cache-cli",
   "description": "Super basic CLI for adding a `utils.js` file for adding lazy-cache to a project.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/jonschlinkert/lazy-cache-cli",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/lazy-cache-cli",
@@ -10,8 +10,8 @@
   },
   "license": "MIT",
   "files": [
-    "index.js",
     "cli.js",
+    "index.js",
     "template.js",
     "utils.js"
   ],
@@ -35,7 +35,11 @@
     "minimist": "^1.2.0",
     "success-symbol": "^0.1.0",
     "write": "^0.2.1",
-    "write-json": "^0.2.0"
+    "write-json": "^0.2.1"
+  },
+  "devDependencies": {
+    "delete": "^0.2.1",
+    "mocha": "^2.3.3"
   },
   "keywords": [
     "cache",
@@ -54,9 +58,5 @@
         "lint-deps"
       ]
     }
-  },
-  "devDependencies": {
-    "delete": "^0.2.1",
-    "mocha": "^2.3.3"
   }
 }
