@@ -22,26 +22,29 @@ var filepath = argv.f || 'utils.js';
  */
 
 if (!fs.existsSync(utils.cwd(filepath))) {
-  lazy.addUtils(function(err) {
+  lazy.addUtils(function(err, updated) {
     if (err) return console.error(err);
     success('added "' + filepath + '"');
+    if (updated) {
+      success('updated package.json `files` with: "' + filepath + '"');
+    } else {
+      success('package.json `files` is already up to date');
+    }
   });
 } else {
   success('filepath "' + filepath + '" already exists');
+
+  if (pkg.files.indexOf(filepath) === -1) {
+    lazy.updatePkg(function(err) {
+      if (err) return console.error(err);
+      success('updated package.json `files` with: "' + filepath + '"');
+    });
+  } else {
+    success('package.json `files` is already up to date');
+  }
 }
 
-/**
- * Update package.json `files` property with the filepath
- */
 
-if (pkg.files.indexOf(filepath) === -1) {
-  lazy.updatePkg(function(err) {
-    if (err) return console.error(err);
-    success('updated package.json `files` with: "' + filepath + '"');
-  });
-} else {
-  success('package.json `files` is already up to date');
-}
 
 function success() {
   var args = [].slice.call(arguments);

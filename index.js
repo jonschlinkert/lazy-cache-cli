@@ -5,39 +5,56 @@ var path = require('path');
 var utils = require('./utils');
 var cwd = utils.cwd;
 
-exports.updatePkg = function(pkg, cb) {
-  if (typeof pkg === 'function') {
-    cb = pkg;
-    pkg = utils.pkg();
+/**
+ * Update `package.json` with the added file
+ */
+
+exports.updatePkg = function(filepath, cb) {
+  if (typeof filepath === 'function') {
+    cb = filepath;
+    filepath = 'utils.js';
   }
 
-  if (pkg.files.indexOf('utils.js') !== -1) {
-    return cb();
+  var pkg = utils.pkg();
+
+  if (pkg.files.indexOf(filepath) !== -1) {
+    return cb(null, false);
   }
 
-  pkg.files.push('utils.js');
-  var filepath = cwd('package.json');
-  utils.writeJson(filepath, pkg, function (err) {
+  pkg.files.push(filepath);
+  utils.writeJson(cwd('package.json'), pkg, function (err) {
     if (err) return console.error(err);
-    return cb();
+    return cb(null, true);
   });
 };
+
+/**
+ * Add a `utils.js` file, or specified filepath
+ */
 
 exports.addUtils = function(filepath, cb) {
   if (typeof filepath === 'function') {
     cb = filepath;
-    filepath = cwd('utils.js');
+    filepath = 'utils.js';
   }
 
   var templatePath = path.join(__dirname, 'template.js');
   var template = fs.readFileSync(templatePath, 'utf8');
   var str = createUtils(template, utils.pkg());
 
-  utils.writeFile(filepath, str, function (err) {
+  utils.writeFile(cwd(filepath), str, function (err) {
     if (err) return cb(err);
-    cb();
+
+    exports.updatePkg(filepath, function(err, res) {
+      if (err) return cb(err);
+      cb(null, res);
+    });
   });
 };
+
+/**
+ * Create the listing of utils to add to the template
+ */
 
 function createUtils(template, pkg) {
   var keys = Object.keys(pkg.dependencies);
