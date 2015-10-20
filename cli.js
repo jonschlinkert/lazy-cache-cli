@@ -4,28 +4,43 @@ process.title = 'lazy-cli';
 
 var fs = require('fs');
 var path = require('path');
+var lazy = require('./');
+var utils = require('./utils');
+var pkg = utils.pkg();
 var argv = require('minimist')(process.argv.slice(2), {
   alias: {f: 'filepath'}
 });
 
-var filepath = argv.f || utils.cwd('utils.js');
+/**
+ * The "lazy" file to add
+ */
 
-if (!fs.existsSync(filepath)) {
+var filepath = argv.f || 'utils.js';
+
+/**
+ * Add the file if doesn't already exist
+ */
+
+if (!fs.existsSync(utils.cwd(filepath))) {
   lazy.addUtils(function(err) {
     if (err) return console.error(err);
     success('added "' + filepath + '"');
   });
 } else {
-  success('"' + filepath + '" already exists');
+  success('filepath "' + filepath + '" already exists');
 }
+
+/**
+ * Update package.json `files` property with the filepath
+ */
 
 if (pkg.files.indexOf(filepath) === -1) {
   lazy.updatePkg(function(err) {
     if (err) return console.error(err);
-    success('updated package.json `files` "' + filepath + '"');
+    success('updated package.json `files` with: "' + filepath + '"');
   });
 } else {
-  success('package.json `files` is up to date');
+  success('package.json `files` is already up to date');
 }
 
 function success() {

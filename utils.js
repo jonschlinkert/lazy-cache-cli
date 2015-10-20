@@ -25,9 +25,9 @@ require = utils;
  */
 
 require('cwd');
+require('load-pkg', 'pkg');
 require('ansi-green', 'green');
 require('inject-snippet', 'inject');
-require('load-pkg', 'pkg');
 require('success-symbol', 'success');
 require('write', 'writeFile');
 require('write-json', 'writeJson');

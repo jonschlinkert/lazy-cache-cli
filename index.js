@@ -31,7 +31,7 @@ exports.addUtils = function(filepath, cb) {
 
   var templatePath = path.join(__dirname, 'template.js');
   var template = fs.readFileSync(templatePath, 'utf8');
-  var str = createUtils(template, keys);
+  var str = createUtils(template, utils.pkg());
 
   utils.writeFile(filepath, str, function (err) {
     if (err) return cb(err);
