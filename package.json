@@ -1,23 +1,24 @@
 {
-  "name": "lazy-cli",
-  "description": "Super basic CLI for adding a `utils.js` file for lazy-cache.",
+  "name": "lazy-cache-cli",
+  "description": "Super basic CLI for adding a `utils.js` file for adding lazy-cache to a project.",
   "version": "0.1.0",
-  "homepage": "https://github.com/jonschlinkert/lazy-cli",
+  "homepage": "https://github.com/jonschlinkert/lazy-cache-cli",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-  "repository": "jonschlinkert/lazy-cli",
+  "repository": "jonschlinkert/lazy-cache-cli",
   "bugs": {
-    "url": "https://github.com/jonschlinkert/lazy-cli/issues"
+    "url": "https://github.com/jonschlinkert/lazy-cache-cli/issues"
   },
   "license": "MIT",
   "files": [
     "index.js",
-    "utils.js"
+    "utils.js",
+    "cli.js"
   ],
   "preferGlobal": true,
   "bin": {
     "lazy": "cli.js"
   },
-  "main": "cli.js",
+  "main": "index.js",
   "engines": {
     "node": ">=0.10.0"
   },
@@ -27,17 +28,34 @@
   "dependencies": {
     "ansi-green": "^0.1.1",
     "cwd": "^0.8.4",
-    "detect-conflicts": "^0.1.1",
     "inject-snippet": "^0.3.0",
     "lazy-cache": "^0.2.3",
     "load-pkg": "^2.0.1",
+    "minimist": "^1.2.0",
     "success-symbol": "^0.1.0",
     "write": "^0.2.1",
     "write-json": "^0.2.0"
   },
-  "devDependencies": {
-    "mocha": "*",
-    "should": "*"
+  "keywords": [
+    "cache",
+    "lazy",
+    "lazy-cache",
+    "load",
+    "module",
+    "require",
+    "requires"
+  ],
+  "verb": {
+    "related": {
+      "description": "Similar projects or projects you might find interesting based on this one.",
+      "list": [
+        "lazy-cache",
+        "lint-deps"
+      ]
+    }
   },
-  "keywords": []
+  "devDependencies": {
+    "delete": "^0.2.1",
+    "mocha": "^2.3.3"
+  }
 }
