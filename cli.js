@@ -22,7 +22,7 @@ var filepath = argv.f || 'utils.js';
  */
 
 if (!fs.existsSync(utils.cwd(filepath))) {
-  lazy.addUtils(function(err, updated) {
+  lazy.addUtils(filepath, function(err, updated) {
     if (err) return console.error(err);
     success('added "' + filepath + '"');
     if (updated) {
