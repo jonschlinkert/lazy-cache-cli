@@ -2,6 +2,11 @@
 
 > Super basic CLI for adding a `utils.js` file for adding lazy-cache to a project.
 
+I made this for two reasons:
+
+1. I keep forgetting to add `utils.js` to package.json, so this is my crutch.
+2. I myself am lazy. This lets me do less work.
+
 ## Install
 
 Install globally with [npm](https://www.npmjs.com/)
