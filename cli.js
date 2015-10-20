@@ -35,7 +35,7 @@ if (!fs.existsSync(utils.cwd(filepath))) {
   success('filepath "' + filepath + '" already exists');
 
   if (pkg.files.indexOf(filepath) === -1) {
-    lazy.updatePkg(function(err) {
+    lazy.updatePkg(filepath, function(err) {
       if (err) return console.error(err);
       success('updated package.json `files` with: "' + filepath + '"');
     });
