@@ -18,7 +18,7 @@ var utils = require('lazy-cache')(require);
  */
 
 var fn = require;
-require = utils;
+require = utils; // eslint-disable-line no-undef, no-native-reassign
 
 /**
  * Lazily required module dependencies
@@ -30,7 +30,7 @@ require = utils;
  * Restore `require`
  */
 
-require = fn;
+require = fn; // eslint-disable-line no-undef, no-native-reassign
 
 /**
  * Expose `utils` modules
