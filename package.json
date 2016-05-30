@@ -10,16 +10,14 @@
   },
   "license": "MIT",
   "files": [
-    "cli.js",
-    "index.js",
-    "template.js",
+    "bin",
+    "lib",
     "utils.js"
   ],
   "preferGlobal": true,
   "bin": {
-    "lazy": "cli.js"
+    "lazy": "bin/cli.js"
   },
-  "main": "index.js",
   "engines": {
     "node": ">=0.10.0"
   },
@@ -27,19 +25,17 @@
     "test": "mocha"
   },
   "dependencies": {
-    "ansi-green": "^0.1.1",
-    "cwd": "^0.8.4",
+    "base-app": "^0.2.3",
+    "base-fs-conflicts": "^0.1.6",
+    "base-store": "^0.4.4",
+    "fs-exists-sync": "^0.1.0",
     "inject-snippet": "^0.3.0",
-    "lazy-cache": "^0.2.3",
-    "load-pkg": "^2.0.1",
-    "minimist": "^1.2.0",
-    "success-symbol": "^0.1.0",
-    "write": "^0.2.1",
-    "write-json": "^0.2.1"
+    "lazy-cache": "^2.0.1",
+    "through2": "^2.0.1",
+    "yargs-parser": "^2.4.0"
   },
   "devDependencies": {
-    "delete": "^0.2.1",
-    "mocha": "^2.3.3"
+    "mocha": "^2.5.3"
   },
   "keywords": [
     "cache",
@@ -50,13 +46,20 @@
     "require",
     "requires"
   ],
+  "lintDeps": {
+    "ignore": [
+      "engines.js"
+    ]
+  },
   "verb": {
     "related": {
-      "description": "Similar projects or projects you might find interesting based on this one.",
       "list": [
         "lazy-cache",
         "lint-deps"
       ]
-    }
+    },
+    "reflinks": [
+      "lazy-cache"
+    ]
   }
 }
