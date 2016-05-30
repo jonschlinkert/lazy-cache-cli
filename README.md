@@ -1,4 +1,4 @@
-# lazy-cache-cli [![NPM version](https://img.shields.io/npm/v/lazy-cache-cli.svg?style=flat)](https://www.npmjs.com/package/lazy-cache-cli) [![NPM downloads](https://img.shields.io/npm/dm/lazy-cache-cli.svg?style=flat)](https://npmjs.org/package/lazy-cache-cli) 
+# lazy-cache-cli [![NPM version](https://img.shields.io/npm/v/lazy-cache-cli.svg?style=flat)](https://www.npmjs.com/package/lazy-cache-cli) [![NPM downloads](https://img.shields.io/npm/dm/lazy-cache-cli.svg?style=flat)](https://npmjs.org/package/lazy-cache-cli)
 
 CLI for adding a `utils.js` file with lazy-cached requires.
 
