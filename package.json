@@ -1,7 +1,7 @@
 {
   "name": "lazy-cache-cli",
   "description": "CLI for adding a `utils.js` file with lazy-cached requires.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/jonschlinkert/lazy-cache-cli",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/lazy-cache-cli",
