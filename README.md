@@ -1,18 +1,6 @@
 # lazy-cache-cli [![NPM version](https://img.shields.io/npm/v/lazy-cache-cli.svg?style=flat)](https://www.npmjs.com/package/lazy-cache-cli) [![NPM downloads](https://img.shields.io/npm/dm/lazy-cache-cli.svg?style=flat)](https://npmjs.org/package/lazy-cache-cli) [![Build Status](https://img.shields.io/travis/jonschlinkert/lazy-cache-cli.svg?style=flat)](https://travis-ci.org/jonschlinkert/lazy-cache-cli)
 
-Super basic CLI for adding a `utils.js` file for adding lazy-cache to a project.
-
-## Install
-
-Install with [npm](https://www.npmjs.com/):
-
-```sh
-$ npm install lazy-cache-cli --save
-```
-
-# lazy-cache-cli [![NPM version](https://img.shields.io/npm/v/lazy-cache-cli.svg?style=flat)](https://www.npmjs.com/package/lazy-cache-cli)
-
-> Super basic CLI for adding a `utils.js` file for adding lazy-cache to a project.
+CLI for adding a `utils.js` file with lazy-cached requires.
 
 ## Install
 
